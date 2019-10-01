@@ -1,17 +1,11 @@
 <?php
-    echo '<pre>';
-    print_r($_POST);
-    $starting_number = $_POST["starting_number"];
-    $ending_number = $_POST["ending_number"];
+  echo '<pre>';
+  print_r($_POST);
 
-    $sum = 0;
-    for($i =$starting_number; $i<=$ending_number;$i++){
-     $sum=$sum+$i;
-    }
-    echo $sum;
 
 
 ?>
+
 
 
 
@@ -21,7 +15,7 @@
     <table>
         <tr>
             <td>Starting Number</td>
-            <td><input type="number" name="starting_number"></td>
+            <td><input type="number"  name="starting_number"></td>
         </tr>
         <tr>
             <td>Ending Number</td>
@@ -33,7 +27,12 @@
         </tr>
         <tr>
             <td></td>
-            <td><input type="submit" type="btn" value="Submit"></td>
+            <td>
+                <input type="submit" name="btn" value="+">
+                <input type="submit" name="btn" value="-">
+                <input type="submit" name="btn" value="*">
+                <input type="submit" name="btn" value="/">
+            </td>
         </tr>
     
     </table>
