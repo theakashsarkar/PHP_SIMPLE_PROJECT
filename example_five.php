@@ -2,7 +2,7 @@
     echo '<pre>';
     print_r($_POST);
     if(isset($_POST['btn'])){
-       require_once './function_defination.php';
+       require_once './function_defination.';
         echo sum_of_seris($_POST);
     }
 
