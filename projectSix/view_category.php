@@ -37,16 +37,31 @@
 
 <a href="add_category.php">Add Category</a>
 <a href="view_category.php">View Category</a>
-<table border="1" width="800" align="">
+<table border="1" width="800" align="center">
 <tr>
     <th>Category Name</th>
     <th>Category Description</th>
     <th>Publication status</th>
-    
+    <th>Action</th>
 </tr>
+<?php while($category_info = mysqli_fetch_assoc($result)){?>
 <tr>
-    <td>Demo</td>
-    <td>Demo</td>
-    <td>Demo</td>
+    <td><?php echo $category_info['categoty_name'];?></td>
+    <td><?php echo $category_info['categoty_description'];?></td>
+    <td>
+    <?php
+     if( $category_info['publication_status'] == 1){
+        echo 'published';
+     }else{
+         echo "unblished";
+     }
+     ?>
+    </td>
+    <td>
+      <a href="edit_category.php?category_id=<?php echo $category_info['category_id'];?>">Edit</a>|
+      <a href="">Delete</a>
+    </td>
+
 </tr>
+<?php }?>
 </table>
