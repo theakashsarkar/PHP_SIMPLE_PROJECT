@@ -2,11 +2,11 @@
  $category_id = $_GET['category_id'];
  //echo $category_id;
  function select_category_info_by_category_id(){
- $host_name = "localhost";
- $user_name= "root";
+ $$hostname ="localhost";
+ $user_name="root";
  $password ="";
- $db_name  = "db_student";
- $connection = mysqli_connect($host_name,$user_name,$db_name);
+ $db_name  ="db_student";
+ $connection = mysqli_connect($hostname,$user_name,$password,$db_name);
  if($connection){
      $db_select = mysqli_select_db($connection,$db_name);
      if($db_select){
@@ -30,11 +30,11 @@
  $category_info = mysqli_fetch_assoc($resourse_id);
   if(isset($_POST)){
       function update_category_name($data){
-        $host_name = "localhost";
- $user_name= "root";
- $password ="";
- $db_name  = "db_student";
- $connection = mysqli_connect($host_name,$user_name,$db_name);
+           $hostname = "localhost";
+           $user_name= "root";
+           $password = "";
+           $db_name  = "db_student";
+           $connection = mysqli_connect($hostname,$user_name,$password,$db_name);
  if($connection){
      $db_select = mysqli_select_db($connection,$db_name);
      if($db_select){
@@ -47,15 +47,16 @@
  }   
   $sql = "UPDATE tbl_category SET category_name='[category_name]',category_description='[category_description]',publication_status='[publication_status]' WHERE category_id='[category_id]'";
    if(mysqli_query($connection,$sql){
-      headers('location:view_category.php');
+     // headers('location:view_category.php');
+     header('location:view_category.php');
         
    }else{
 
    }
 
-}
+
       update_category_name($_POST);
-  }
+};
 
 ?>
 

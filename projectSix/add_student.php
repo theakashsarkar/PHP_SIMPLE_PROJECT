@@ -7,7 +7,7 @@
             $user_name="root";
             $password ="";
             $db_name  ="db_student";
-            $connection=mysqli_connect($hostname,$user_name,$password);
+            $connection= mysqli_connect($hostname,$user_name,$password,$db_name);
             if($connection){
                 //echo 'Database connection';
                $db_select = mysqli_select_db($connection,$db_name);
